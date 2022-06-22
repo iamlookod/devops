@@ -21,5 +21,5 @@ FROM alpine:latest
 RUN apk add --no-cache bash
 WORKDIR /app
 COPY --from=builder /app/main .
-EXPOSE 3000
+EXPOSE 8080
 CMD ["./main"]
