@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nodejs-nestjs
-  namespace: app
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -15,7 +14,7 @@ spec:
         app: nodejs-nestjs
     spec:
       containers:
-        - image: nodejs-nestjs:latest
+        - image: docker pull iamlookod/nodejs-nestjs:latest
           name: nodejs-nestjs
           ports:
             - name: http
