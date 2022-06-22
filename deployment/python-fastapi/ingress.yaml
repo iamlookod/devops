@@ -1,30 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: localhost
+  name: python-fastapi
 spec:
   ingressClassName: nginx
   rules:
-    - host: nodejs-nestjs.localdev.me
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: nodejs-nestjs
-                port:
-                  number: 80
-    - host: go-fiber.localdev.me
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: go-fiber
-                port:
-                  number: 80
     - host: python-fastapi.localdev.me
       http:
         paths:
