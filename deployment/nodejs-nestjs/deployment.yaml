@@ -14,8 +14,8 @@ spec:
         app: nodejs-nestjs
     spec:
       containers:
-        - image: iamlookod/nodejs-nestjs:latest
-          name: nodejs-nestjs
+        - name: nodejs-nestjs
+          image: iamlookod/nodejs-nestjs:latest
           ports:
             - name: http
               containerPort: 3000
@@ -35,3 +35,5 @@ spec:
             requests:
               cpu: 100m
               memory: 128Mi
+      imagePullSecrets:
+        - name: regcred
