@@ -14,7 +14,7 @@ spec:
         app: nodejs-nestjs
     spec:
       containers:
-        - image: docker pull iamlookod/nodejs-nestjs:latest
+        - image: iamlookod/nodejs-nestjs:latest
           name: nodejs-nestjs
           ports:
             - name: http
