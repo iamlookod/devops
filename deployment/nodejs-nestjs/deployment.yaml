@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nodejs-nestjs
-          image: nodejs-nestjs:latest
+          image: index.docker.io/v1/iamlookod/nodejs-nestjs:latest
           ports:
             - name: http
               containerPort: 3000
