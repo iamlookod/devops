@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-nestjs
+  name: python-fastapi
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: nodejs-nestjs
+      app: python-fastapi
   template:
     metadata:
       labels:
-        app: nodejs-nestjs
+        app: python-fastapi
     spec:
       containers:
-        - name: nodejs-nestjs
-          image: iamlookod/nodejs-nestjs:latest
+        - name: python-fastapi
+          image: iamlookod/python-fastapi:latest
           ports:
             - name: http
               containerPort: 8080
