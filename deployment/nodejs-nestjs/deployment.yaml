@@ -16,6 +16,10 @@ spec:
         vault.hashicorp.com/agent-inject: "true"
         vault.hashicorp.com/role: "app"
         vault.hashicorp.com/agent-inject-secret-database-config.txt: "app/data/nodejs-nestjs"
+        vault.hashicorp.com/agent-inject-template-database-config.txt: |
+          {{- with secret "app/data/database/config" -}}
+          postgresql://{{ .Data.data.username }}:{{ .Data.data.password }}@postgres:5432/wizard
+          {{- end -}}
     spec:
       serviceAccountName: app
       containers:
