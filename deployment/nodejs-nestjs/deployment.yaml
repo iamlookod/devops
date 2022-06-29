@@ -12,7 +12,12 @@ spec:
     metadata:
       labels:
         app: nodejs-nestjs
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "app"
+        vault.hashicorp.com/agent-inject-secret-database-config.txt: "app/data/nodejs-nestjs"
     spec:
+      serviceAccountName: app
       containers:
         - name: nodejs-nestjs
           image: iamlookod/nodejs-nestjs:latest
