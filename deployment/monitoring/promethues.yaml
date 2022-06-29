@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-prometheus-stack
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    chart: kube-prometheus-stack
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 36.2.0
+    helm:
+      releaseName: kube-prometheus-stack
+      values: |
+        alertmanager:
+          enabled: true
+        defaultRules:
+          create: true
+          rules:
+            etcd: false
+            kubeScheduler: false
+        grafana:
+          enabled: true
+          adminPassword: prom-operator
+        kubeEtcd:
+          enabled: false
+        kubeScheduler:
+          enabled: false
+        prometheus:
+          enabled: true
+        prometheusOperator:
+          enabled: true
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: monitoring
