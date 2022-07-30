@@ -9,9 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    helm:
-      valueFiles:
-      - values.yaml
     path: deployment/argo-config/nodejs-nestjs
     repoURL: git@github.com:iamlookod/devops.git
-    targetRevision: HEAD
+    targetRevision: main
