@@ -23,3 +23,5 @@ ingress:
     - host: nodejs-nestjs.localdev.me
       paths:
         - path: /
+          service:
+            name: "nodejs-nestjs"
