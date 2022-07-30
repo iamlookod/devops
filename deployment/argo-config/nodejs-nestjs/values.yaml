@@ -1,0 +1,25 @@
+name: "nodejs-nestjs"
+replicas: 2
+
+container:
+  image:
+    name: iamlookod/nodejs-nestjs
+    tag: "latest"
+  port: 3000
+  healthcheck:
+    path: /
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+ingress:
+  enabled: true
+  hosts:
+    - host: nodejs-nestjs.localdev.me
+      paths:
+        - path: /
