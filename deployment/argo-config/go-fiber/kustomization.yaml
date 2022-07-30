@@ -1,0 +1,19 @@
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+
+resources:
+  - ./all.yaml
+
+secretGenerator:
+  - name: go-fiber
+    namespace: app
+    envs:
+      - "config/secrets.env"
+    type: Opaque
+configMapGenerator:
+  - name: go-fiber
+    envs:
+      - "config/configmap.env"
+
+generatorOptions:
+  disableNameSuffixHash: true
