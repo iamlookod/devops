@@ -1,5 +1,5 @@
 apiVersion: v2
-name: nodejs-nestjs
+name: helm-nodejs-nestjs
 description: A Helm chart for nodejs-nestjs
 type: application
 version: 0.1.0
