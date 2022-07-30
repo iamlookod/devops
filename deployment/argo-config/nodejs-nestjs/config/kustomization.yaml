@@ -5,12 +5,12 @@ secretGenerator:
   - name: nodejs-nestjs
     namespace: app
     envs:
-      - ".env"
+      - "secrets.env"
     type: Opaque
 configMapGenerator:
   - name: nodejs-nestjs
     envs:
-    - .env
+      - "configmap.env"
 
 generatorOptions:
   disableNameSuffixHash: true
