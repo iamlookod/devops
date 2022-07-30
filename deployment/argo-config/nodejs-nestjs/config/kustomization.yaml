@@ -7,6 +7,10 @@ secretGenerator:
     envs:
       - ".env"
     type: Opaque
+configMapGenerator:
+  - name: nodejs-nestjs
+    envs:
+    - .env
 
 generatorOptions:
   disableNameSuffixHash: true
