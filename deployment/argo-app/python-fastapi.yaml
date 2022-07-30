@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/iamlookod/devops.git
     targetRevision: main
-    path: deployment/python-fastapi
+    path: deployment/argo-config/python-fastapi
     directory:
       recurse: true
   destination:

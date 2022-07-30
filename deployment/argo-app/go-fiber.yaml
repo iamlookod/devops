@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/iamlookod/devops.git
     targetRevision: main
-    path: deployment/go-fiber
+    path: deployment/argo-config/go-fiber
     directory:
       recurse: true
   destination:
