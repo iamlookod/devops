@@ -25,3 +25,9 @@ ingress:
         - path: /
           service:
             name: "python-fastapi"
+
+configmap:
+  enabled: true
+
+secret:
+  enabled: true

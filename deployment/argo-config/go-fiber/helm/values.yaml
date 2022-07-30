@@ -25,3 +25,9 @@ ingress:
         - path: /
           service:
             name: "go-fiber"
+
+configmap:
+  enabled: true
+
+secret:
+  enabled: true
