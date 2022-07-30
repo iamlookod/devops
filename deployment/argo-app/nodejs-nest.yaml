@@ -12,5 +12,5 @@ spec:
     helm:
       valueFiles:
       - values.yaml
-    path: deployment/ns
+    path: deployment/argo-config/nodejs-nestjs
     repoURL: git@github.com:iamlookod/devops.git
