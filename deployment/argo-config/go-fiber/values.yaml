@@ -1,5 +1,5 @@
 name: "go-fiber"
-replicas: 2
+replicas: 1
 
 container:
   image:
