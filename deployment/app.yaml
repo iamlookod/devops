@@ -16,3 +16,4 @@ spec:
     path: deployment/argo-app
     directory:
       recurse: true
+      exclude: "**/*.yaml"
