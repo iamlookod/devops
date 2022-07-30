@@ -13,7 +13,6 @@ spec:
       labels:
         app: nodejs-nestjs
     spec:
-      serviceAccountName: internal-app
       containers:
         - name: nodejs-nestjs
           image: iamlookod/nodejs-nestjs:latest
