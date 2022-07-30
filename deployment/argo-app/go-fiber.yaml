@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/iamlookod/devops.git
+    repoURL: git@github.com:iamlookod/devops.git
     targetRevision: main
     path: deployment/argo-config/go-fiber
     directory:
