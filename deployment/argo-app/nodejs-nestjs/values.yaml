@@ -1,8 +1,0 @@
-name: nodejs-nestjs
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: app
-  source:
-    repoURL: git@github.com:iamlookod/devops.git
-    targetRevision: HEAD
