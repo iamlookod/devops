@@ -9,8 +9,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    helm:
-      valueFiles:
-      - values.yaml
     path: deployment/argo-config/python-fastapi
     repoURL: git@github.com:iamlookod/devops.git
+    targetRevision: main
+    plugin:
+      name: kustomized-helm
