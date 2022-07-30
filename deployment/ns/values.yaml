@@ -1,6 +1,0 @@
-ns:
- - develop-betkub-core
- - develop-betkub-provider
- - test-betkub-core
- - test-betkub-provider
-project: betkub

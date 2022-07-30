@@ -3,16 +3,14 @@ kind: Application
 metadata:
   name: python-fastapi
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
+  destination:
+    namespace: app
+    server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: git@github.com:iamlookod/devops.git
-    targetRevision: main
+    helm:
+      valueFiles:
+      - values.yaml
     path: deployment/argo-config/python-fastapi
-    directory:
-      recurse: true
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: app
+    repoURL: git@github.com:iamlookod/devops.git
