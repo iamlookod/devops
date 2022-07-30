@@ -9,6 +9,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: plugins/kustomized-helm
+    path: deployment/argo-config/nodejs-nestjs
     repoURL: git@github.com:iamlookod/devops.git
     targetRevision: main
+    plugin:
+      name: kustomized-helm
