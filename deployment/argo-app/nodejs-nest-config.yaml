@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nodejs-nestjs-config
+  namespace: argocd
+spec:
+  destination:
+    namespace: app
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deployment/argo-config/nodejs-nestjs/config
+    repoURL: git@github.com:iamlookod/devops.git
+    targetRevision: HEAD
