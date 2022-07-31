@@ -41,7 +41,7 @@ spec:
           {{- end }}
           volumeMounts:
             - name: {{ .Values.name }}-volume
-              mountPath: /usr/share/nginx/html/config.json
+              mountPath: /usr/share/nginx/html
               subPath: config.json
               readOnly: true
       volumes:
