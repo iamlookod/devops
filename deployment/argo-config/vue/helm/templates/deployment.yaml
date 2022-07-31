@@ -40,12 +40,12 @@ spec:
                 name: {{ .Values.name }}
           {{- end }}
           volumeMounts:
-            - name: {{ .Values.name }}-config
+            - name: {{ .Values.name }}
               mountPath: /usr/share/nginx/html/config.json
               subPath: config.json
               readOnly: true
       volumes:
-        - name: {{ .Values.name }}-config
+        - name: {{ .Values.name }}
           configMap:
             name: {{ .Values.name }}
       
