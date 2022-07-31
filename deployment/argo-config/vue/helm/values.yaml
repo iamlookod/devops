@@ -1,0 +1,33 @@
+name: "vue"
+replicas: 1
+
+container:
+  image:
+    name: iamlookod/vue
+    tag: "latest"
+  port: 8080
+  healthcheck:
+    path: /
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+ingress:
+  enabled: true
+  hosts:
+    - host: vue.localdev.me
+      paths:
+        - path: /
+          service:
+            name: "vue"
+
+configmap:
+  enabled: true
+
+secret:
+  enabled: false

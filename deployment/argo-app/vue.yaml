@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vue
+  namespace: argocd
+spec:
+  destination:
+    namespace: app
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deployment/argo-config/vue
+    repoURL: git@github.com:iamlookod/devops.git
+    targetRevision: main
+    plugin:
+      name: kustomized-helm
