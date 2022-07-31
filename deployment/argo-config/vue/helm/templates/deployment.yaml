@@ -20,14 +20,14 @@ spec:
             - name: http
               containerPort: {{ .Values.container.port }}
               protocol: TCP
-          # livenessProbe:
-          #   httpGet:
-          #     path: {{ .Values.container.healthcheck.path }}
-          #     port: http
-          # readinessProbe:
-          #   httpGet:
-          #     path: {{ .Values.container.healthcheck.path }}
-          #     port: http
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.container.healthcheck.path }}
+              port: http
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.container.healthcheck.path }}
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           envFrom:
@@ -40,12 +40,12 @@ spec:
                 name: {{ .Values.name }}
           {{- end }}
           volumeMounts:
-            - name: {{ .Values.name }}-volume
+            - name: mnt
               mountPath: /usr/share/nginx/html/config.json
               subPath: config.json
               readOnly: true
       volumes:
-        - name: {{ .Values.name }}-volume
+        - name: mnt
           configMap:
             name: {{ .Values.name }}
       

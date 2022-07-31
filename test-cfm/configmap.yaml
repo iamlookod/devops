@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-cfgmap
+data:
+  config.json: |
+    {
+      "TITLE": "A TITLE"
+    
+    }

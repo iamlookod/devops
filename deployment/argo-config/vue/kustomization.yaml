@@ -12,7 +12,9 @@ secretGenerator:
     type: Opaque
 configMapGenerator:
   - name: vue
-    envs:
+    files:
+      - "config.json=config/config.json"
+    envs: 
       - "config/configmap.env"
 
 generatorOptions:
