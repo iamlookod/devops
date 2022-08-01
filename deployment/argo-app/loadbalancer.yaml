@@ -13,4 +13,4 @@ spec:
     repoURL: git@github.com:iamlookod/devops.git
     targetRevision: main
     plugin:
-      name: kustomized-helm
+      name: kustomized-helm-dev
