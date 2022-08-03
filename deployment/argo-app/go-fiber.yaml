@@ -14,3 +14,9 @@ spec:
     targetRevision: main
     plugin:
       name: kustomized-helm
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
