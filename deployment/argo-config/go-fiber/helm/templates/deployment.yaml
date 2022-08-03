@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: {{ .Values.name }}
   annotations:
-    configmap.reloader.stakater.com/reload: {{ .Values.name }}
-    secret.reloader.stakater.com/reload: {{ .Values.name }}
+    configmap.reloader.stakater.com/reload: "{{ .Values.name }}"
+    secret.reloader.stakater.com/reload: "{{ .Values.name }}"
 spec:
   replicas: {{ .Values.replicas }}
   revisionHistoryLimit: 3
