@@ -8,12 +8,12 @@ secretGenerator:
   - name: loadbalancer
     namespace: app
     envs:
-      - git@github.com:iamlookod/devops.git/deployment/argo-config/loadbalancer/config/secrets.env
+      - "../../loadbalancer-config/config/secrets.env"
     type: Opaque
 configMapGenerator:
   - name: loadbalancer
     envs:
-      - git@github.com:iamlookod/devops.git/deployment/argo-config/loadbalancer/config/configmaps.env
+      - "../../loadbalancer-config/config/configmaps.env"
 
 generatorOptions:
   disableNameSuffixHash: true
