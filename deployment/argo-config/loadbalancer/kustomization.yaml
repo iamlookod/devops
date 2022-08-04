@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - ./all.yaml
-  - git@github.com:iamlookod/devops-config.git/loadbalancer-config/
+  - "git@github.com:iamlookod/devops-config.git/loadbalancer-config/"
 # secretGenerator:
 #   - name: loadbalancer
 #     namespace: app
