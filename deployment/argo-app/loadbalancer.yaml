@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: go-fiber
+  namespace: argocd
+spec:
+  destination:
+    namespace: app
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deployment/argo-config/go-fiber
+    repoURL: git@github.com:iamlookod/devops.git
+    targetRevision: main
+    plugin:
+      name: kustomized-helm-dev
+  # syncPolicy:
+  #   automated:
+  #     prune: true
+  #     selfHeal: true
+  #   syncOptions:
+  #     - CreateNamespace=true
