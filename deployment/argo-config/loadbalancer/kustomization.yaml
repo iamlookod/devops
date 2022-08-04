@@ -3,7 +3,7 @@
 
 resources:
   - ./all.yaml
-  - git@github.com:iamlookod/devops.git/deployment/loadbalancer-config/kustomization.yaml
+  - git@github.com:iamlookod/devops.git/deployment/argo-config/loadbalancer-config/kustomization.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
