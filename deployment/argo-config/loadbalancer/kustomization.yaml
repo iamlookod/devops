@@ -8,12 +8,12 @@ secretGenerator:
   - name: loadbalancer
     namespace: app
     envs:
-      - "../../loadbalancer-config/config/secrets.env"
+      - "../../devops-config/loadbalancer-config/config/secrets.env"
     type: Opaque
 configMapGenerator:
   - name: loadbalancer
     envs:
-      - "../../loadbalancer-config/config/configmaps.env"
+      - "../../devops-config/loadbalancer-config/config/configmaps.env"
 
 generatorOptions:
   disableNameSuffixHash: true
