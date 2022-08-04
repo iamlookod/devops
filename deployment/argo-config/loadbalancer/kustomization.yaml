@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   # - ./all.yaml
-  - https://github.com/iamlookod/devops-config.git/loadbalancer/loadbalancer-config/
+  - https://github.com/iamlookod/devops-config.git/loadbalancer-config/
   # - github.com/kubernets-sigs/kustomize/examples/helloWorld?ref=main
 # secretGenerator:
 #   - name: loadbalancer
