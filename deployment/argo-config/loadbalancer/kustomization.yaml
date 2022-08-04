@@ -3,7 +3,17 @@
 
 resources:
   - ./all.yaml
-  - git@github.com:iamlookod/devops.git/deployment/argo-config/loadbalancer-config/kustomization.yaml
+
+secretGenerator:
+  - name: loadbalancer
+    namespace: app
+    envs:
+      - git@github.com:iamlookod/devops.git/deployment/argo-config/loadbalancer/config/secrets.env
+    type: Opaque
+configMapGenerator:
+  - name: loadbalancer
+    envs:
+      - git@github.com:iamlookod/devops.git/deployment/argo-config/loadbalancer/config/configmaps.env
 
 generatorOptions:
   disableNameSuffixHash: true
