@@ -1,0 +1,33 @@
+name: "go-fiber"
+replicas: 1
+
+container:
+  image:
+    name: iamlookod/go-fiber
+    tag: "latest"
+  port: 8080
+  healthcheck:
+    path: /
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+ingress:
+  enabled: true
+  hosts:
+    - host: go-fiber.localdev.me
+      paths:
+        - path: /
+          service:
+            name: "go-fiber"
+
+configmap:
+  enabled: true
+
+secret:
+  enabled: true

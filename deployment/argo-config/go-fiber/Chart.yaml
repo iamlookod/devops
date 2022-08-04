@@ -6,6 +6,6 @@ version: 0.1.0
 appVersion: "1.0.0"
 
 dependencies:
-- name: helm-go-fiber
-  version: 0.1.0
-  repository: file://helm
+  - name: helm-go-fiber
+    version: 0.1.0
+    repository: github.com:iamlookod/devops.git/deployment/argo-config/go-fiber/helm
