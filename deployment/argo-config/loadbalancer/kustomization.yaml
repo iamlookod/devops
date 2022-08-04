@@ -3,17 +3,7 @@
 
 resources:
   - ./all.yaml
-
-secretGenerator:
-  - name: loadbalancer
-    namespace: app
-    envs:
-      - "config/secrets.env"
-    type: Opaque
-configMapGenerator:
-  - name: loadbalancer
-    envs:
-      - "config/configmap.env"
+  - git@github.com:iamlookod/devops.git/deployment/loadbalancer-config/kustomization.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
