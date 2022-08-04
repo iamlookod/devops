@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ./all.yaml
+  # - ./all.yaml
   # - github.com/devops-config/loadbalancer/loadbalancer-config/?ref=main
   - "git@github.com/iamlookod/devops-config.git/loadbalancer-config/?ref=main"
 # secretGenerator:
