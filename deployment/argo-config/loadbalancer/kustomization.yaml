@@ -3,17 +3,17 @@ kind: Kustomization
 
 resources:
   - ./all.yaml
-
-secretGenerator:
-  - name: loadbalancer
-    namespace: app
-    envs:
-      - "../../devops-config/loadbalancer-config/config/secrets.env"
-    type: Opaque
-configMapGenerator:
-  - name: loadbalancer
-    envs:
-      - "../../devops-config/loadbalancer-config/config/configmaps.env"
+  - "../../../devops-config/loadbalancer-config/"
+# secretGenerator:
+#   - name: loadbalancer
+#     namespace: app
+#     envs:
+#       - "../../devops-config/loadbalancer-config/config/secrets.env"
+#     type: Opaque
+# configMapGenerator:
+#   - name: loadbalancer
+#     envs:
+#       - "../../devops-config/loadbalancer-config/config/configmaps.env"
 
 generatorOptions:
   disableNameSuffixHash: true
